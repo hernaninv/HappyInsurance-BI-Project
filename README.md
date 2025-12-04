@@ -1,211 +1,143 @@
-📘 Happy Insurance — Business Intelligence Project
+# 📘 Happy Insurance — Business Intelligence Project
 
-A complete BI solution built using Power BI, Power Pivot, Power Query, and DAX, following the methodology taught in the TCBDA27 Big Data Analysis Program (Technion).
+A complete BI solution built using **Power BI**, **Power Pivot**, **Power Query**, and **DAX**, following the methodology taught in the Technion TCBDA27 Big Data Analysis Program.  
+This project simulates a real-world BI workflow: from raw operational data → to semantic modeling → to analytical dashboards → to business insights.
 
-🎯 Project Objective
+---
 
-This project simulates a real-world Business Intelligence workflow by transforming raw operational data from the fictional insurance company Happy Insurance into actionable insights.
+## 🎯 Project Objective
 
-The project includes the full BI lifecycle:
+The goal of this project is to transform raw operational data from a fictional insurance company (*Happy Insurance*) into actionable insights through:
 
-Data extraction and cleansing (ETL) in Power Query
+- ETL (Power Query)
+- Dimensional modeling (Power Pivot)
+- Tabular modeling with DAX
+- Interactive dashboards (Power BI)
+- Business-driven storytelling
 
-Dimensional modeling (Star Schema) in Power Pivot
+---
 
-Tabular modeling with DAX measures
+## 🗂 Repository Structure
 
-Interactive dashboards in Power BI
+Data/ → Source CSV/Excel files
+PowerBI/ → PBIX file + images + model schema
+DAX/ → DAX measures (AnalysisProject2.dax)
+Presentation/ → Official slide deck (DataModeling.pptx)
+README.md → Documentation
 
-Business-driven insights and conclusions
+---
 
-📁 Repository Structure
-Data/                     → Data sources (Excel/CSV)
-PowerBI/                  → PBIX file + dashboards previews
-DAX/                      → DAX measures + DAX Studio queries
-Presentation/             → Project slide deck
-PowerQuery/               → M scripts (optional)
-Documentation/            → Original instructions (optional)
-
-🧩 ETL Process (Power Query)
+## 🧼 ETL Process (Power Query)
 
 The ETL pipeline was implemented entirely in Power Query and includes:
 
-Full data cleansing (nulls, duplicates, type corrections)
+- Full data cleansing (nulls, duplicates, incorrect types)
+- Standardization of business fields
+- Integration of **CSV + SQL Server** sources
+- Logical corrections
+- Construction of a complete **DimDate**
+- Creation of clean dimensional tables (Star Schema–ready)
 
-Standardization of fields and categories
+---
 
-Integration of multiple data sources (CSV + SQL)
+## ⭐ Dimensional Model — Star Schema
 
-Logical corrections in business attributes
-
-Construction of a complete DimDate table
-
-Preparation of clean dimensional tables for the Star Schema
-
-⭐ Dimensional Model — Star Schema
-
-### 📐 Data Model (Star Schema)
+### 📐 Data Model
 
 <img src="PowerBI/ModelSchema.png" width="600">
 
-The Tabular Model includes:
+The tabular model includes:
 
-▶ Fact Table
+### ▶ Fact Table  
+**FactSales**  
+(revenue, quantity, unit price, division, region, date)
 
-FactSales (revenue, quantity, unit price, division, region, date)
+### ▶ Dimension Tables  
+- DimCustomer  
+- DimDate  
+- DimDivision  
+- DimRegion  
+- DimProduct  
 
-▶ Dimension Tables
+### ▶ Additional Modeling Work  
+- Correct one-to-many relationships  
+- Calculated Columns (when required)  
+- `DimTime` calculated table (where applicable)  
+- Filtering propagation aligned with BI best practices  
 
-DimCustomer
+---
 
-DimDate
+## 🧮 DAX Measures
 
-DimDivision
+All DAX code was developed according to the project requirements.
 
-DimRegion
+Key functions used include:  
+`CALCULATE()`, `FILTER()`, `SUMX()`, `RELATED()`, `ALL()`,  
+`TOTALYTD()`, `TOTALQTD()`, `TOTALMTD()`, `SAMEPERIODLASTYEAR()`, `VAR`
 
-DimProduct
+📄 **Full DAX file:**  
+`DAX/AnalysisProject2.dax`
 
-▶ Additional Modeling Work
+---
 
-Correct one-to-many relationships
+## 📊 Power BI Dashboards
 
-Calculated Columns where necessary
+The dashboard suite implements all required Power BI functionalities:  
 
-Calculated table for DimTime (when applicable)
+Charts, tables, maps, slicers, KPIs, custom color palette, drill-down, drill-through, custom tooltips, What-If parameters, and report-level filters.
 
-Filtering propagation aligned with BI best practices
+### ⭐ Sample Screenshots (Representative Pages)
 
-📐 DAX Measures
+<img src="PowerBI/DashboardPreviews/Page1.png" width="600">
 
-All measures were developed following the project requirements, including:
+<img src="PowerBI/DashboardPreviews/Page2.png" width="600">
 
-Required DAX Functions
+<img src="PowerBI/DashboardPreviews/Page3.png" width="600">
 
-CALCULATE()
+*(These three dashboards summarize the main analytical outputs of the report.  
+Additional pages are included in the PBIX file.)*
 
-FILTER()
+---
 
-SUMX()
-
-RELATED()
-
-ALL()
-
-TOTALYTD()
-
-TOTALQTD()
-
-TOTALMTD()
-
-SAMEPERIODLASTYEAR()
-
-VAR variables
-
-KPI indicators
-
-Full DAX code is available in:
-DAX/AnalysisProject2.dax
-
-📊 Power BI Dashboards
-
-The dashboard suite implements all required Power BI functionalities, including:
-
-Visualizations
-
-Bar & column charts
-
-Slicers
-
-Maps
-
-Tables & Matrix
-
-Scatter charts
-
-Cards & KPI visuals
-
-Gauge
-
-Filters
-
-Visual-level filters
-
-Page-level filters
-
-Report-level filters
-
-Top N filters (e.g., Top 10)
-
-Interaction
-
-Drill Down (3 different techniques)
-
-Drill Through
-
-Custom Tooltip
-
-What-If Parameters
-
-Design
-
-Title & formatting
-
-Custom color palette
-
-Logos / images
-
-Clean layout with consistent styling
-
-### 📊 Dashboard Previews
-
-Here are sample screenshots of the Power BI dashboards:
-
-<img src="PowerBI/DashboardPreviews/1.RevenueByProduct.png" width="600">
-
-<img src="PowerBI/DashboardPreviews/2.RevenueByCustAndRegion.png" width="600">
-
-<img src="PowerBI/DashboardPreviews/3.RevenueEvolutionInTime.png" width="600">
-
-<img src="PowerBI/DashboardPreviews/4.RevenueByPeriods.png" width="600">
-
-<img src="PowerBI/DashboardPreviews/5.CustomerDrillThrough.png" width="600">
-
-🔎 Key Business Insights
+## 🔑 Key Business Insights
 
 Examples of insights derived from the model:
 
-Life Insurance is the company’s largest division.
+- **Life Insurance** is the company’s largest division.  
+- **Health Insurance** is the fastest-growing division.  
+- In Life Insurance, **APAC** has the highest revenue per unit sold.  
+- In Health Insurance, **USA** is the dominant market.  
+- Unit price for Life Insurance increased **34% from 2011 → 2012**.
 
-Health Insurance is the fastest-growing division.
+These insights come directly from the semantic model and reflect the business logic of the dataset.
 
-In “Life Insurance”, APAC has the highest revenue per unit sold.
+---
 
-For “Health Insurance”, USA is the dominant market.
+## 🎤 Project Presentation
 
-Unit price for Life Insurance increased 34% from 2011 to 2012.
+The official slide deck (requirements, methodology, model diagrams, conclusions) is available at:
 
-These insights come directly from the model and reflect the business logic of the dataset.
+`Presentation/DataModeling.pptx`
 
-🎤 Project Presentation
+---
 
-The official slide deck (requirements, methodology, model diagrams, conclusions) is included in:
+## ✔ Conclusion
 
-Presentation/DataModeling.pptx
+This repository demonstrates a full **end-to-end BI project**:
 
-✔️ Conclusion
-
-This repository demonstrates a full end-to-end BI project:
-data ingestion → transformation → modeling → DAX layer → dashboards → business insights.
+**data ingestion → transformation → modeling → DAX layer → visualization → business analysis**
 
 It reflects industry-level best practices in:
 
-Data modeling
+- Data modeling  
+- ETL (Power Query)  
+- DAX development  
+- Interactive report design  
+- Analytical storytelling  
 
-ETL with Power Query
+---
 
-DAX development
+## 📧 Contact
 
-Interactive report design
+For questions or collaboration, feel free to reach out via GitHub or LinkedIn.
 
-Analytical storytelling
