@@ -44,6 +44,10 @@ Preparation of clean dimensional tables for the Star Schema
 
 ⭐ Dimensional Model — Star Schema
 
+### 📐 Data Model (Star Schema)
+
+<img src="PowerBI/ModelSchema.png" width="600">
+
 The Tabular Model includes:
 
 ▶ Fact Table
@@ -71,9 +75,6 @@ Calculated Columns where necessary
 Calculated table for DimTime (when applicable)
 
 Filtering propagation aligned with BI best practices
-
-A screenshot of the model is included in:
-PowerBI/ModelSchema.png
 
 📐 DAX Measures
 
@@ -156,8 +157,19 @@ Logos / images
 
 Clean layout with consistent styling
 
-Screenshots are located in:
-PowerBI/DashboardPreviews/
+### 📊 Dashboard Previews
+
+Here are sample screenshots of the Power BI dashboards:
+
+<img src="PowerBI/DashboardPreviews/1.RevenueByProduct.png" width="600">
+
+<img src="PowerBI/DashboardPreviews/2.RevenueByCustAndRegion.png" width="600">
+
+<img src="PowerBI/DashboardPreviews/3.RevenueEvolutionInTime.png" width="600">
+
+<img src="PowerBI/DashboardPreviews/4.RevenueByPeriods.png" width="600">
+
+<img src="PowerBI/DashboardPreviews/5.CustomerDrillThrough.png" width="600">
 
 🔎 Key Business Insights
 
