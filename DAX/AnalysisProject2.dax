@@ -1,0 +1,41 @@
+﻿-- Querie 1 :  Top 10 Customers by Total Revenue
+
+EVALUATE
+TOPN(
+    10,
+    SUMMARIZE(
+        Customers,
+        Customers[CustomerName],
+        "Total Revenue", CALCULATE(SUM(Sales[Revenue]))
+    ),
+    [Total Revenue]
+)
+
+
+
+-- Querie 2 :  Sales by Product and Country
+
+EVALUATE
+SUMMARIZECOLUMNS(
+    Products[ProductName],
+    Customers[Country],
+    "Total Revenue", SUM(Sales[Revenue])
+)
+ORDER BY [Total Revenue] DESC
+
+
+
+
+-- Querie 3 :  Sales Monthly Evolution
+
+EVALUATE
+ADDCOLUMNS(
+    SUMMARIZE(
+        Date,
+        'Date'[Year],
+        'Date'[Month],
+        'Date'[MonthName]
+    ),
+    "Monthly Revenue", CALCULATE(SUM(Sales[Revenue]))
+)
+ORDER BY 'Date'[Year], 'Date'[Month]
