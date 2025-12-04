@@ -88,11 +88,11 @@ Charts, tables, maps, slicers, KPIs, custom color palette, drill-down, drill-thr
 
 ### ⭐ Sample Screenshots (Representative Pages)
 
-<img src="PowerBI/DashboardPreviews/Page1.png" width="600">
+<img src="PowerBI/DashboardPreviews/1.RevenueByProduct.png" width="600">
 
-<img src="PowerBI/DashboardPreviews/Page2.png" width="600">
+<img src="PowerBI/DashboardPreviews/2.RevenueByCustAndRegion.png" width="600">
 
-<img src="PowerBI/DashboardPreviews/Page3.png" width="600">
+<img src="PowerBI/DashboardPreviews/4.RevenueByPeriods.png" width="600">
 
 *(These three dashboards summarize the main analytical outputs of the report.  
 Additional pages are included in the PBIX file.)*
